@@ -25,12 +25,10 @@ export class FileUploadService {
     )
   }
 
-  transcribe(name: string): Observable<any> {
+  transcribe(name: string, nspeakers: string): Observable<any> {
     console.log("reached here on click of transcribe")
-    var formData: any = new FormData();
-    formData.append("name", name);
-
-    return this.http.get('http://localhost:5000/meeting-transciption/api/transcribe?filename=abc&nspeakers=2', {
+  
+    return this.http.get('http://localhost:5000/meeting-transciption/api/transcribe?filename='.concat(name).concat('&nspeakers=').concat(nspeakers), {
       reportProgress: true,
       observe: 'events'
     }).pipe(

@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       name: [''],
-      file: [null]
+      file: [null],
+      nspeakers : String
     })
   }
 
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
       file: File
     });
     console.log(this.form.get('name'))
+    console.log("nspeakers",this.form.get('nspeakers'))
     this.form.get('file').updateValueAndValidity()
   }
 
