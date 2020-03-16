@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -15,10 +14,17 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule,  
+  MatIconModule,  
+  MatCardModule,  
+  MatButtonModule,  
+  MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
@@ -30,10 +36,17 @@ import { AppRoutingModule } from './app-routing.module';
     HomeModule,
     AboutModule,
     LoginModule,
+    HttpClientModule,
+    MatToolbarModule,  
+    MatIconModule,  
+    MatButtonModule,  
+    MatCardModule,  
+    MatProgressBarModule  ,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
   providers: [],
+  exports : [ReactiveFormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

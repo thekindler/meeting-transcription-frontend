@@ -7,3 +7,31 @@ q {
   font-size: 1.2rem;
   quotes: "« " " »";
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.center{
+  margin-top: 100 px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bg {
+  /* The image used */
+  background-image: url("https://www.governmentciomedia.com/sites/default/files/styles/featured_article_image/public/2019-03/iStock-1040557296.jpg?itok=g9D9ey30");
+  /* height in pxels */
+  height: 650px;
+  background-size: cover;
+}
+.width-50{
+  width: 30%;
+}
+.margin40{
+  margin-top: 200px;
+}
